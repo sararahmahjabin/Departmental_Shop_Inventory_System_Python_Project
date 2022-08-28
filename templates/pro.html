@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content %}
+
+
+    {% for all_products in all_products %}
+        {{ all_products.title }}<br>
+
+    {% endfor %}
+
+
+
+{% endblock content %}
+
+</body>
+</html>

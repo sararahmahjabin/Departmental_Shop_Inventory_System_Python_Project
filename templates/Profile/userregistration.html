@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <form method="POST">
+
+    {% csrf_token %}
+
+
+      {{ reg_form.as_p }}
+
+         <div>
+                                <button id="payment-button" name="create" type="submit" class="btn btn-lg btn-info btn-block">
+                                    <span id="payment-button-amount">Add User</span>
+                                </button>
+                            </div>
+                            <center>{% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        <a{% if message.tags %} class="{{ message.tags }}"{% endif %}><p style="color:red" >{{ message }}</p></a>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}</center>
+    </form>
+
+{% endblock content %}
+
+

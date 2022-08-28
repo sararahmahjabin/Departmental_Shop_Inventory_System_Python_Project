@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<br>
+<div class="col d-flex justify-content-center">
+   <div class="card" style="width: 18rem;">
+        <img src="{{profile.Profile_Picture.url}}" class="card-img-top">
+        <div class="card-body">
+        	{% if profile.Full_name is Null %}
+          	<div class="alert alert-primary text-md-center text-danger" role="alert">
+			  Please Set up Profile first!
+			</div>
+        	{% else %}
+          <p class="card-text">Name : {{profile.Full_name}}</p>
+          <p class="card-text">Designation : {{profile.Designation}}</p>
+          <p class="card-text">Expertise : {{profile.Expertise}}</p>
+          <p class="card-text">Date of Birth : {{profile.Date_of_Birth}}</p>
+          <p class="card-text">Contact No :  {{profile.Phone_num}}</p>
+          <p class="card-text">{{profile.profile }}</p>
+        	{% endif %}
+        </div>
+    </div>
+</div>
+<hr>
+
+{% endblock content %}

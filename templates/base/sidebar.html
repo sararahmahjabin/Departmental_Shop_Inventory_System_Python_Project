@@ -1,0 +1,90 @@
+<aside id="left-panel" class="left-panel" >
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div id="main-menu" class="main-menu collapse navbar-collapse" >
+            <ul class="nav navbar-nav">
+                <li class="active">
+
+                </li>
+                <li class="menu-title">My Store</li><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="{% url 'dashboard' %}" class="dropdown-toggle" data-toggle="#" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tachometer"></i> Dashboard</a>
+
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="{% url 'show_profile' %}" name = "viewpro" class="dropdown-toggle" data-toggle="#" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i> Profile</a>
+
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="{% url 'add-user' %}" name = "addusr" class="dropdown-toggle" data-toggle="#" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-plus"></i> Add User</a>
+
+                </li>
+                
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" name="supplier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-paper-plane"></i>Supplier</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i  class="fa fa-id-card-o"></i><a name="createsupp" href="{% url 'create-supplier' %}">Add</a></li>
+                        <li><i  class="fa fa-th"></i><a name="viewsupp" href="{% url 'supplier-list' %}">View</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" name="customer" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Customer</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a name="addcus" href="{% url 'create-buyer' %}">Add</a></li>
+                        <li><i class="fa fa-th"></i><a name="viewcus" href="{% url 'buyer-list' %}">View</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" name="staff" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-archive"></i>Employee</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a name="addstf" href="{% url 'create_profile' %}">Set Up profile</a></li>
+                        <li><i class="fa fa-th"></i><a name="viewstf" href="{% url 'staff-list' %}">View Employee list</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" name="category" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cubes"></i>Categories</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a name="addcate" href="{% url 'add-category' %}">Add</a></li>
+                        <li><i class="fa fa-th"></i><a name="viewcate" href="{% url 'category-list' %}">View</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" name="product" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-product-hunt"></i>Product</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a name="addpro" href="{% url 'create-product' %}">Add</a></li>
+                        <li><i class="fa fa-th"></i><a name="viewpro" href="{% url 'product-list' %}">View</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" name="stock" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Stock</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a name="addstk" href="{% url 'add-stock' %}">Add</a></li>
+                        <li><i class="fa fa-th"></i><a name="viewstk" href="{% url 'stock-list' %}">View</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" name="sell" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cart-plus"></i>Sell</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a name="addsell" href="{% url 'create-order' %}">Add</a></li>
+                        <li><i class="fa fa-th"></i><a name="viewsell" href="{% url 'order-list' %}">View</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="{% url 'total-sell' %}" name="sell" class="dropdown-toggle" data-toggle="#" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Customer Demand</a>
+                    
+                </li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside>

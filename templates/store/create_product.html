@@ -1,0 +1,91 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Create Product{% endblock title %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                            <li><a href="#">Product</a></li>
+                            <li class="active">Create</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Create Product</strong>
+            </div>
+            <div class="card-body">
+                <!-- Credit Card -->
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        <form action="#" method="post" novalidate="novalidate">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="title" class="control-label mb-1">Name</label>
+                                {{ form.title }}
+                            </div>
+                            <div class="form-group">
+                                <label for="brand" class="control-label mb-1">Brand</label>
+                                {{ form.brand }}
+                            </div>
+                            <div class="form-group">
+                                <label for="price" class="control-label mb-1">Price</label>
+                                {{ form.price }}
+                            </div>
+                            <div class="form-group">
+                                <label for="weight" class="control-label mb-1">weight</label>
+                                {{ form.weight }}
+                            </div>
+                            <div class="form-group">
+                                <label for="categories" class="control-label mb-1">Category</label>
+                                {{ form.categories }} <a class="related-widget-wrapper-link add-related" id="add_id_categories" href="{% url 'add-category' %}?_to_field=id&amp;_popup=1" title="Add another categorie"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>
+                            </div>
+                            <div class="form-group">
+                                <label for="supplier" class="control-label mb-1">Supplier</label>
+                                {{ form.supplier }} <a class="related-widget-wrapper-link add-related" id="add_id_supplier" href="{% url 'create-supplier' %}?_to_field=id&amp;_popup=1" title="Add another supplier"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>
+                            </div>
+                            <div>
+                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                    <span name="createpro" id="payment-button-amount">Create Product</span>
+                                </button>
+                            </div>
+                            <center><a href="{% url 'add-stock' %}?_to_field=id&amp;_popup=1"><p style="color:red">Please Add Stock For This Product Click Here  <img src="/static/admin/img/icon-addlink.svg" alt="Add"> </p></a></center><br>
+                            <center>{% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        <a{% if message.tags %} class="{{ message.tags }}"{% endif %}><p style="color:red" >{{ message }}</p></a>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}</center>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- .card -->
+
+    </div><!--/.col-->
+</div>
+{% endblock content %}
